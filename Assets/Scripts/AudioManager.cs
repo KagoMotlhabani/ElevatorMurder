@@ -7,19 +7,19 @@ public class AudioManager : MonoBehaviour
     public AudioSource musicSource;
     public AudioSource effectsSource;
 
-    public AudioClip theme;
+    public AudioClip themeMusic;
     public AudioClip click;
+    public AudioClip doubleClick;
     public AudioClip investigate;
     // Start is called before the first frame update
     void Start()
     {
-        musicSource.clip = theme;
+        musicSource.clip = themeMusic;
         musicSource.Play();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void PlaySFX(AudioClip clip){
+        effectsSource.PlayOneShot(clip);
+
+    }//end play SFX
 }
